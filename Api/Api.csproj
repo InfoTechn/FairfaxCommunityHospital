@@ -3,12 +3,13 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <AzureFunctionsVersion>v3</AzureFunctionsVersion>
     <RootNamespace>BlazorApp.Api</RootNamespace>
+    <UserSecretsId>259dfa01-639a-497d-96a0-dcc385c2372f</UserSecretsId>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="3.0.3" />
+    <!--<PackageReference Include="Microsoft.NET.Sdk.Functions" Version="3.0.3" />-->
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Shared\Shared.csproj" />
+    <!--<ProjectReference Include="..\Shared\Shared.csproj" />-->
   </ItemGroup>
   <ItemGroup>
     <None Update="host.json">
