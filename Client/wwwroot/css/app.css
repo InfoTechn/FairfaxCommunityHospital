@@ -9,9 +9,9 @@
     font-style: normal;
 }
 
-.content {
-    padding-top: 1.7rem;
-}
+/*.content {
+    padding-top: 7rem;
+}*/
 
 .invalid {
     outline: 1px solid red;
@@ -450,18 +450,18 @@ h1 a:link, h2 a:link, h3 a:link, h4 a:link, h5 a:link, h6 a:link {
 }
 
 .sptop {
-    margin-top: 30px;
+    margin-top: 0px;
     margin-bottom: 30px;
     margin-right: auto;
     margin-left: 0px;
-    padding-top: 30px;
+    padding-top: 0px;
     padding-bottom: 30px;
     color: #fff;
     width: 800px;
     font-size: 15px;
     line-height: 22px;
     text-align: center;
-    vertical-align: sub;
+    vertical-align: baseline;
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -838,7 +838,7 @@ body, html {
 
 @media (max-width:960px) {
     body main, html main {
-        padding-top: 60px;
+        padding-top: 0px;
     }
 }
 
@@ -866,9 +866,11 @@ body, html {
 #accordion .fa, #mobile-search, #primary-nav li, .fa-inverse, .feature-story, .green-btn, .row, a, strong {
     transition: all 0.2s ease-out;
 }
-
+.content {
+    padding-top: .8rem;
+}
 #content {
-    padding: 30px 0;
+    padding: 0px 0;
 }
 
     #content .flex {
@@ -5156,8 +5158,7 @@ img {
         width: 33.3333%;
     }
 
-    .card
-
+.card
 {
     background-color: white;
     border-radius: 0.25rem;
@@ -5165,16 +5166,12 @@ img {
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    &:hover
+    /*&:hover*/
+}
 
-{
-    .card__image
-
+.card__image
 {
     filter: contrast(100%);
-}
-
-}
 }
 
 .card__content {
@@ -5198,21 +5195,21 @@ img {
     ;
     &::before
 
-{
+/*{
     content: "";
     display: block;
-    padding-top: 56.25%;
-    // 16:9 aspect ratio
-}
+    padding-top: 56.25%;*/
+    /*// 16:9 aspect ratio*/
+/*}*/
 
-@media(min-width: 40rem) {
+/*@media(min-width: 40rem) {
     &::before {
         padding-top: 66.6%;
         // 3:2 aspect ratio
     }
 }
 
-}
+}*/
 
 
 
