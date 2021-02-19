@@ -21,7 +21,7 @@
                     <!--<button type="submit">Search</button>	-->
                     <!--<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search here..." 	-->
                     &nbsp;<input type="button" id="clear" value="Clear Search" />
-                    <button class="btn btn-primary" onclick="@CallJSMethod" id="clear" Text="Clear Search">Call JS Method</button>
+                    @*<button class="btn btn-primary" onclick="@CallJSMethod" id="clear" Text="Clear Search">Call JS Method</button>*@
                     <br />
 
                     <table class="pure-table pure-table-horizontal" id="myTable">
@@ -4011,16 +4011,16 @@
     @functions {
         protected static string message { get; set; }
 
-        
+
         protected void CallJSMethod()
         {
-            JSRuntime.InvokeAsync<bool>("JSMethod");
+            //JSRuntime.InvokeAsync<bool>("JSMethod");
         }
 
 
         private void onClick(MouseEventArgs e)
         {
-            Count++;
+            //Count++;
         }
     }
     }
