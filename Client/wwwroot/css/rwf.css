@@ -1226,7 +1226,7 @@ body.toolbar-fixed.toolbar-horizontal #header{top:78px;}
 }
 @media (max-width:760px){.news-wrap .news-main-col .news-feed{padding:0;}
 }
-#content.single-layout{margin:0 0 30px;}
+#content.single-layout{margin:-15px 0 30px;}
 #content.single-layout a.back i{font-size:12px;display:inline-block;vertical-align:middle;margin:-2px 2px 0 0;}
 #content.single-layout .item-title{margin:25px 0 40px;}
 #content.single-layout .article-meta{display:flex;justify-content:space-between;}
