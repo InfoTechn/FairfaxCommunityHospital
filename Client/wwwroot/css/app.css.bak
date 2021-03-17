@@ -12,7 +12,7 @@
 .content {
     padding-top: 7rem;
 }
-
+ 
 .invalid {
 	outline: 1px solid red;
 }
@@ -74,7 +74,7 @@ article_nested {
 html{line-height:1.15;-webkit-text-size-adjust:100%;box-sizing:border-box;-webkit-font-feature-settings:"kern" 1;font-feature-settings:"kern" 1;font-kerning:normal;font-family:Open Sans,Segoe UI,Roboto,Helvetica,Arial,sans-serif;font-size:100%}
 html, body {height: 100%; font-size: 100%;  }
 body {
-    margin: 0;
+	background-color: #fff;
 	color: #111111;
 	cursor: default;
 	font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
