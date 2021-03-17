@@ -10,7 +10,7 @@
     font-style: normal;
 }
 .content {
-    padding-top: .5rem;
+    padding-top: .7 rem;
 }
 .invalid {
 	outline: 1px solid red;
