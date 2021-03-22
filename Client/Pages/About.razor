@@ -2,6 +2,7 @@
 @*@inject IJSRuntime JS;*@
 @inject IJSRuntime jsRuntime;
 
+
 <div id="body-wrap">
     <main>
         <a class="skip-main" href="#layout">Skip to main content</a>
@@ -421,6 +422,6 @@
         module = await jsRuntime.InvokeAsync<JSObjectReference>("import", "./js/about.js").AsTask();
         module2 = await jsRuntime.InvokeAsync<JSObjectReference>("import", "./js/lightslider.js").AsTask();
         module4 = await jsRuntime.InvokeAsync<JSObjectReference>("import", "./js/jquery-2.1.1.min.js").AsTask();
-        module3 = await jsRuntime.InvokeAsync<JSObjectReference>("includeCss").AsTask(); 
+        module3 = await jsRuntime.InvokeAsync<JSObjectReference>("includeCss").AsTask();
     }
 }
