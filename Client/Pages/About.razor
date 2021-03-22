@@ -424,4 +424,14 @@
         module4 = await jsRuntime.InvokeAsync<JSObjectReference>("import", "./js/jquery-2.1.1.min.js").AsTask();
         module3 = await jsRuntime.InvokeAsync<JSObjectReference>("includeCss").AsTask();
     }
+
+    protected override Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            return jsRuntime.InvokeVoidAsync("alertFunctions.init").AsTask();
+        }
+
+        return Task.CompletedTask;
+    }
 }
