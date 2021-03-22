@@ -418,9 +418,9 @@
 
     protected override async void OnInitialized()
     {
-        module = await jsRuntime.InvokeAsync<JSObjectReference>("import", "./js/about.js");
-        module2 = await jsRuntime.InvokeAsync<JSObjectReference>("import", "./js/lightslider.js");
-        module4 = await jsRuntime.InvokeAsync<JSObjectReference>("import", "./js/jquery-2.1.1.min.js");
-        module3 = await jsRuntime.InvokeAsync<JSObjectReference>("includeCss");
+        module = await jsRuntime.InvokeAsync<JSObjectReference>("import", "./js/about.js").AsTask();
+        module2 = await jsRuntime.InvokeAsync<JSObjectReference>("import", "./js/lightslider.js").AsTask();
+        module4 = await jsRuntime.InvokeAsync<JSObjectReference>("import", "./js/jquery-2.1.1.min.js").AsTask();
+        module3 = await jsRuntime.InvokeAsync<JSObjectReference>("includeCss").AsTask(); 
     }
 }
