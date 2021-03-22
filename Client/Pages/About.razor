@@ -414,11 +414,13 @@
     JSObjectReference module;
     JSObjectReference module2;
     JSObjectReference module3;
+    JSObjectReference module4;
 
     protected override async void OnInitialized()
     {
         module = await jsRuntime.InvokeAsync<JSObjectReference>("import", "./js/about.js");
         module2 = await jsRuntime.InvokeAsync<JSObjectReference>("import", "./js/lightslider.js");
+        module4 = await jsRuntime.InvokeAsync<JSObjectReference>("import", "./js/jquery-2.1.1.min.js");
         module3 = await jsRuntime.InvokeAsync<JSObjectReference>("includeCss");
     }
 }
