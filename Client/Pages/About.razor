@@ -412,26 +412,26 @@
 
 
 @code {
-    //JSObjectReference module;
-    //JSObjectReference module2;
-    //JSObjectReference module3;
-    //JSObjectReference module4;
+    JSObjectReference module;
+    JSObjectReference module2;
+    JSObjectReference module3;
+    JSObjectReference module4;
 
-    //protected override async void OnInitialized()
-    //{
-    //module = await jsRuntime.InvokeAsync<JSObjectReference>("import", "./js/about.js").AsTask();
-    //module2 = await jsRuntime.InvokeAsync<JSObjectReference>("import", "./js/lightslider.js").AsTask();
-    //module4 = await jsRuntime.InvokeAsync<JSObjectReference>("import", "./js/jquery-2.1.1.min.js").AsTask();
-    //module3 = await jsRuntime.InvokeAsync<JSObjectReference>("includeCss").AsTask();
-    //}
+    protected override async void OnInitialized()
+    {
+        module = await jsRuntime.InvokeAsync<JSObjectReference>("import", "./js/about.js").AsTask();
+        module2 = await jsRuntime.InvokeAsync<JSObjectReference>("import", "./js/lightslider.js").AsTask();
+        module4 = await jsRuntime.InvokeAsync<JSObjectReference>("import", "./js/jquery-2.1.1.min.js").AsTask();
+        module3 = await jsRuntime.InvokeAsync<JSObjectReference>("includeCss").AsTask();
+    }
 
-    //protected override Task OnAfterRenderAsync(bool firstRender)
-    //{
-    //    if (firstRender)
-    //    {
-    //        return jsRuntime.InvokeVoidAsync("alertFunctions.init").AsTask();
-    //    }
+    protected override Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            return jsRuntime.InvokeVoidAsync("Go.init").AsTask();
+        }
 
-    //    return Task.CompletedTask;
-    //}
+        return Task.CompletedTask;
+    }
 }
