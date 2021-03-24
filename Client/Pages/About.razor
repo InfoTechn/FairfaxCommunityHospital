@@ -365,31 +365,6 @@
                     <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                     <td colspan="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                 </tr>
-                <!--        <tr bgcolor="15223b">
-                      <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                      <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                     <td>&nbsp;</td>
-                      <td>&nbsp;</td>
-                     <td>&nbsp;</td>
-                      <td>&nbsp;</td>
-                       <td>&nbsp;</td>
-                       <td>&nbsp;</td>
-
-                     <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                     <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                </tr> -->
-                <!--   <tr bgcolor="15223b">
-                      <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                      <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                     <td>&nbsp;</td>
-                      <td>&nbsp;</td>
-                     <td>&nbsp;</td>
-                      <td>&nbsp;</td>
-                       <td>&nbsp;</td>
-                       <td>&nbsp;</td>
-                     <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                     <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                </tr> -->
             </table>
         </div>
 
@@ -412,26 +387,15 @@
 
 
 @code {
-    JSObjectReference module;
-    JSObjectReference module2;
-    JSObjectReference module3;
-    JSObjectReference module4;
+    
+    bool firstRender = true;
 
-    protected override async void OnInitialized()
-    {
-        module = await jsRuntime.InvokeAsync<JSObjectReference>("import", "./js/about.js").AsTask();
-        module2 = await jsRuntime.InvokeAsync<JSObjectReference>("import", "./js/lightslider.js").AsTask();
-        module4 = await jsRuntime.InvokeAsync<JSObjectReference>("import", "./js/jquery-2.1.1.min.js").AsTask();
-        module3 = await jsRuntime.InvokeAsync<JSObjectReference>("includeCss").AsTask();
-    }
-
-    protected override Task OnAfterRenderAsync(bool firstRender)
+    protected async override Task OnAfterRenderAsync(bool firstRender)
     {
         if (firstRender)
         {
-            return jsRuntime.InvokeVoidAsync("Go.init").AsTask();
+            await jsRuntime.InvokeAsync<object>("initializeCarousel");
+            firstRender = false;
         }
-
-        return Task.CompletedTask;
     }
 }
